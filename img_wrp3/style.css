@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
+/* css reset */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(20, 20, 20, 0.548);
+}
+.image__wrapper {
+  width: 600px;
+  height: 300px;
+  position: relative;
+  /* border: 5px solid red; */
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 1s;
+}
+.image__wrapper::before {
+  content: " ";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 95%;
+  height: 90%;
+  /* transform: translate(-5%,-5%); */
+  border: 1px solid rgba(250, 247, 247, 0.788);
+  z-index: 1;
+  opacity: 1;
+  transition: all 1s;
+}
+.image__wrapper__img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  transition: all 1s;
+}
+
+.image__wrapper__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  height: 75px;
+  font-size: 23px;
+  background: #4c7af894;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: all 1s;
+}
+.image__wrapper:hover::before {
+  opacity: 0;
+}
+.image__wrapper:hover .image__wrapper__caption {
+  opacity: 0;
+}
+.image__wrapper:hover .image__wrapper__img {
+  transform: scale(1.5);
+}
