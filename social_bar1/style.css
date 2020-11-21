@@ -1,0 +1,115 @@
+/* css reset */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color-facebook: #3b5998;
+  --color-twitter: #3cf;
+  --color-gmail: #dc4a38;
+  --color-dribbble: #f26798;
+  --color-skype: #00aff0;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social__icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px;
+}
+a {
+  text-decoration: none;
+  width: 100px;
+  height: 100px;
+  /* display: inline-block; */
+  border-radius: 20px;
+  background-color: rgba(20, 20, 20, 0.151);
+  line-height: 60px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  /* margin:50px; */
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.social__icons a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 130%;
+  background: rgb(230, 29, 29);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.5, 0.13, 0.52, 1.5);
+  transform: translate(-100%, 50%) rotate(45deg);
+}
+a:hover::before {
+  opacity: 1;
+  transform: scale(1);
+  transform: translate(-10%, -10%) rotate(45deg);
+  overflow: hidden;
+}
+a:hover i {
+  z-index: 10;
+  transform: scale(1.5);
+  color: #fff;
+}
+a::before i {
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.social__icons a:nth-of-type(1) i {
+  color: var(--color-facebook);
+}
+.social__icons a:nth-of-type(2) i {
+  color: var(--color-twitter);
+}
+.social__icons a:nth-of-type(3) i {
+  color: var(--color-gmail);
+}
+.social__icons a:nth-of-type(4) i {
+  color: var(--color-dribbble);
+}
+.social__icons a:nth-of-type(5) i {
+  color: var(--color-skype);
+}
+.social__icons a:nth-of-type(1)::before {
+  background-color: var(--color-facebook);
+}
+.social__icons a:nth-of-type(2)::before {
+  background-color: var(--color-twitter);
+}
+.social__icons a:nth-of-type(3)::before {
+  background-color: var(--color-gmail);
+}
+.social__icons a:nth-of-type(4)::before {
+  background-color: var(--color-dribbble);
+}
+.social__icons a:nth-of-type(5)::before {
+  background-color: var(--color-skype);
+}
+/* a:hover i {
+  transform: scale(1.2);
+  color: #fff;
+} */
+a::before i {
+  z-index: 10;
+  transition: all 0.3s;
+}
